@@ -7,7 +7,7 @@ let currentStore;
 const defaultMapState = () => ({});
 const defaultMapDispatch = dispatch => ({ dispatch });
 
-export {helpers};
+export { helpers };
 
 export function provide(store) { currentStore = store; }
 

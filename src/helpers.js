@@ -1,6 +1,7 @@
 import { bindActionCreators } from 'redux';
 
 export function shallowEqual(objA, objB) {
+  if (typeof obj !== 'object') return objA === objB;
   if (objA === objB) return true;
 
   const keysA = Object.keys(objA);
@@ -11,8 +12,7 @@ export function shallowEqual(objA, objB) {
   // Test for A's keys different from B.
   const hasOwn = Object.prototype.hasOwnProperty;
   for (let i = 0; i < keysA.length; i++) {
-    if (!hasOwn.call(objB, keysA[i]) ||
-        objA[keysA[i]] !== objB[keysA[i]]) {
+    if (!hasOwn.call(objB, keysA[i]) || objA[keysA[i]] !== objB[keysA[i]]) {
       return false;
     }
   }
@@ -22,7 +22,7 @@ export function shallowEqual(objA, objB) {
 
 export function observeStore(store, currState, select, onChange) {
   if (typeof onChange !== 'function') return null;
-  let currentState = currState || {};
+  let currentState = currState === undefined ? {} : currState;
 
   function handleChange() {
     const nextState = select(store.getState());
@@ -38,5 +38,5 @@ export function observeStore(store, currState, select, onChange) {
   return unsubscribe;
 }
 
-export const wrapActionCreators = (actionCreators) =>
-  dispatch => bindActionCreators(actionCreators, dispatch);
+export const wrapActionCreators = actionCreators => dispatch =>
+  bindActionCreators(actionCreators, dispatch);

@@ -1,6 +1,6 @@
 {
   "name": "js-redux",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "Redux bindings for vanilla javascript functions and classes",
   "main": "lib/index.js",
   "scripts": {

@@ -1,7 +1,7 @@
 import { bindActionCreators } from 'redux';
 
 export function shallowEqual(objA, objB) {
-  if (typeof obj !== 'object') return objA === objB;
+  if (typeof objA !== 'object') return objA === objB;
   if (objA === objB) return true;
 
   const keysA = Object.keys(objA);

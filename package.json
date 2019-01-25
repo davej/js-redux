@@ -41,7 +41,7 @@
   },
   "homepage": "https://github.com/DaveJ/js-redux",
   "dependencies": {
-    "is-class": "0.0.5"
+    "is-class": "0.0.6"
   },
   "peerDependencies": {
     "redux": "^3.3.1"
@@ -58,9 +58,9 @@
     "eslint-plugin-react": "^4.1.0",
     "expect": "^1.13.4",
     "mocha": "^4.1.0",
-    "redux": "^4.0.0",
+    "redux": "^4.0.1",
     "rimraf": "^2.4.4",
     "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0"
+    "webpack-dev-server": "^1.16.5"
   }
 }

@@ -35,7 +35,7 @@ export function connect(mapState = defaultMapState, mapDispatch = defaultMapDisp
         if (typeof calledComponent.updated === 'function') calledComponent.updated(oldState);
       });
     } else {
-      calledComponent = component(currentState, actions);
+      calledComponent = component(currentState, actions, ...args);
       if (calledComponent) {
         observeStore(currentStore, currentState, mapState, calledComponent.updated);
       }

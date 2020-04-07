@@ -17,6 +17,7 @@
     "type": "git",
     "url": "https://github.com/DaveJ/js-redux.git"
   },
+  "files": ["*"],
   "keywords": [
     "redux",
     "reducer",

@@ -6,15 +6,21 @@ import { storeReducer, connectState, connectActions } from './utils/redux';
 describe('class syntax', () => {
   let initSpy;
   let updatedSpy;
+  let constructorSpy;
   let calledTestClass;
   before(() => {
     updatedSpy = expect.createSpy();
     initSpy = expect.createSpy();
-    class TestClass { updated = updatedSpy; init = initSpy; }
+    constructorSpy = expect.createSpy();
+    class TestClass {
+      constructor(...args) { constructorSpy(...args); }
+      updated = updatedSpy;
+      init = initSpy;
+    }
 
     const store = createStore(storeReducer);
     provide(store);
-    calledTestClass = connect(connectState, connectActions)(TestClass)();
+    calledTestClass = connect(connectState, connectActions)(TestClass)(true);
   });
 
   it('should call class init function', () => {
@@ -23,6 +29,10 @@ describe('class syntax', () => {
 
   it('should not call updated', () => {
     expect(updatedSpy).toNotHaveBeenCalled();
+  });
+
+  it('should call the constructor with the argument of `true`', () => {
+    expect(constructorSpy).toHaveBeenCalledWith(true);
   });
 
   it('should have state and actions', () => {

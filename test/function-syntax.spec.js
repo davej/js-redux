@@ -17,7 +17,7 @@ describe('function syntax', () => {
     calledTestFn = connect(
       connectState,
       connectActions
-    )(testFnSpy)();
+    )(testFnSpy)(true);
   });
 
   it('should call function', () => {
@@ -39,6 +39,10 @@ describe('function syntax', () => {
 
   it('should not call updated', () => {
     expect(updatedSpy).toNotHaveBeenCalled();
+  });
+
+  it('should call the constructor with the argument of `true`', () => {
+    expect(testFnSpy.calls[0].arguments[2]).toBe(true);
   });
 
   it('should be possible to call action arguments', () => {

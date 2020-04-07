@@ -38,5 +38,4 @@ export function observeStore(store, currState, select, onChange) {
   return unsubscribe;
 }
 
-export const wrapActionCreators = actionCreators => dispatch =>
-  bindActionCreators(actionCreators, dispatch);
+export const wrapActionCreators = actionCreators => dispatch => bindActionCreators(actionCreators, dispatch);

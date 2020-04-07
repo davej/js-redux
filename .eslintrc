@@ -1,17 +1,18 @@
 {
   "parser": "babel-eslint",
-  "extends": "eslint-config-airbnb",
+  "extends": "eslint-config-airbnb/base",
   "env": {
     "browser": true,
     "mocha": true,
     "node": true
   },
   "rules": {
-    "react/jsx-uses-react": 2,
-    "react/jsx-uses-vars": 2,
-    "react/react-in-jsx-scope": 2
-  },
-  "plugins": [
-    "react"
-  ]
+    "no-plusplus": 0,
+    "max-classes-per-file": 0,
+    "arrow-parens": 0,
+    "comma-dangle": 0,
+    "import/order": 0,
+    "max-len": 0,
+    "lines-between-class-members": 0
+  }
 }

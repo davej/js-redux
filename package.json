@@ -41,7 +41,7 @@
   },
   "homepage": "https://github.com/DaveJ/js-redux",
   "dependencies": {
-    "is-class": "0.0.7"
+    "is-class": "0.0.9"
   },
   "peerDependencies": {
     "redux": "^3.3.1"

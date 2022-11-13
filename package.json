@@ -62,7 +62,7 @@
     "mocha": "^4.1.0",
     "redux": "^4.0.1",
     "rimraf": "^2.4.4",
-    "webpack": "^1.12.9",
+    "webpack": "^5.75.0",
     "webpack-dev-server": "^1.16.5"
   }
 }
